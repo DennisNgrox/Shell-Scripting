@@ -25,3 +25,12 @@ then
 else
         echo 'deu ruim'
 fi
+
+{
+    "jsonrpc": "2.0",
+    "method": "trigger.create",
+    "params": [
+        {
+            "description": "Processor load is too high on {HOST.NAME}",
+            "expression": "{Linux server:system.cpu.load[percpu,avg1].last()}>5"
+        }],
