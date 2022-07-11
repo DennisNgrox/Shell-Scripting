@@ -6,7 +6,7 @@ ZABBIX_API="http://192.168.126.142/api_jsonrpc.php"
 
 
 
-ZABBIX_AUTH_TOKEN=$(curl -s -H  'Content-Type: application/json-rpc' -d "{\"jsonrpc\": \"2.0\",\"method\":\"user.login\",\"params\":{\"user\":\""${ZABBIX_USER}"\",\"passwo$
+ZABBIX_AUTH_TOKEN=$(curl -s -H  'Content-Type: application/json-rpc' -d "{\"jsonrpc\": \"2.0\",\"method\":\"user.login\",\"params\":{\"user\":\""${ZABBIX_USER}"\",\"password\":\""${ZABBIX_PASS}"\"},\"auth\": null,\"id\":0}" $ZABBIX_API |  jq -r .result)
 
 
 
@@ -28,7 +28,3 @@ TEMPLATES=$(curl -s -H 'Content-Type: application/json-rpc' -d "
     \"id\": 1
 }"  ${ZABBIX_API}
 )
-
-RESULT=$(echo $TEMPLATES | jq ".result [].templateid" | sed 's/"//g'| sort)
-
-echo $RESULT
