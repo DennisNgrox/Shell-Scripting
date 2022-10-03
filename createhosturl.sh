@@ -9,8 +9,11 @@ IP_ZABBIX=$2
 
 ZABBIX_AUTH_TOKEN=$(curl -s -H  'Content-Type: application/json-rpc' -d "{\"jsonrpc\": \"2.0\",\"method\":\"user.login\",\"params\":{\"user\":\""${ZABBIX_USER}"\",\"password\":\""${ZABBIX_PASS}"\"},\"auth\": null,\"id\":0}" $ZABBIX_API |  jq -r .result)
 
+TESTE=$(echo $1 | egrep "\.com\.br")
 
-curl -s -H  'Content-Type: application/json-rpc' -d "
+if [ $1 = $TESTE ] ;
+then
+HM=$(curl -s -H  'Content-Type: application/json-rpc' -d "
 {
     \"jsonrpc\": \"2.0\",
     \"method\": \"host.create\",
@@ -47,3 +50,11 @@ curl -s -H  'Content-Type: application/json-rpc' -d "
     \"auth\": \"${ZABBIX_AUTH_TOKEN}\",
     \"id\": 1
 }" ${ZABBIX_API}
+) 
+
+echo $HM
+
+else
+    echo "$1 - URL INCORRETA" >> error.url
+fi
+
