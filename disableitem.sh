@@ -31,7 +31,7 @@ then
         echo "$1: não encontrado"
 else
 
-for i in $(cat teste.dennis);
+for i in $(cat item.get.id);
 do
     value=$(echo $i);
 result=$(curl -s -H  'Content-Type: application/json-rpc' -d "
