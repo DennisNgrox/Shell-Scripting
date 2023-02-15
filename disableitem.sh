@@ -21,10 +21,10 @@ itemget=$(curl -s -H  'Content-Type: application/json-rpc' -d "
     },
     \"auth\": \"${zabbix_auth_token}\",
     \"id\": 1
-}" ${zabbix_api} | jq .result[].itemid | sed s'/"//g' > teste.dennis
+}" ${zabbix_api} | jq .result[].itemid | sed s'/"//g' > item.get.id
 )
 
-teste=$(cat teste.dennis | head -n1)
+teste=$(cat item.get.id | head -n1)
 if [ -z $teste ];
 then
         echo "$1: não encontrado" >> log
