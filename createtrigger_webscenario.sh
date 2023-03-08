@@ -90,7 +90,6 @@ triggercreateseverity4one=$(curl -s -k -H  'Content-Type: application/json-rpc' 
     \"id\": 1
 }" ${zabbix_api} | jq .result.triggerids[] | sed s'/"//g')
 
-echo 
 
 
 triggercreateseverity4two=$(curl -s -k -H  'Content-Type: application/json-rpc' -d "
