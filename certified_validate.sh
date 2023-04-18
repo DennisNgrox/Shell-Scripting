@@ -8,7 +8,7 @@ then
             port=$2
 fi
 
-notAfter=$(openssl s_client -connect $host:$port < /dev/null 2> /dev/null | openssl x509 -in /dev/stdin -noout -dates | grep n>expire=$(date -d "$notAfter" +%s)
+notAfter=$(openssl s_client -connect $host:$port < /dev/null 2> /dev/null | openssl x509 -in /dev/stdin -noout -dates | grep notAfter | sed -e 's/notAfter=//')
 today=$(date --utc +%s)
 left_seconds=$((expire - today))
 left_days=$((left_seconds/60/60/24))
