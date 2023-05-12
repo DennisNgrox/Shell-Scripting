@@ -1,13 +1,5 @@
 #!/bin/bash
 
-
-#1 ° Preciso da Triggerid para update de tags
-#2 ° Preciso do DiscoveryID para get da trigger
-#3 ° Preciso do Hostids para get do discoveryID
-#4 ° Lista com nome dos templates. // $1 --- Realiza utilizando: sed 
-#5 ° Fazer template.get 
-
-
 zabbix_user="Admin"
 zabbix_pass="ip"
 zabbix_api="http://ip/api_jsonrpc.php"
