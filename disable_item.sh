@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 zabbix_user="user"
 zabbix_pass="pass"
 zabbix_api="url"
