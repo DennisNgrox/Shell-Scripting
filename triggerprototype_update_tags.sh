@@ -2,10 +2,10 @@
 
 
 #1 ° Preciso da Triggerid para update de tags
-#2 ° Preciso do DiscoveryID para get da trigger // FEITO
-#3 ° Preciso do Hostids para get do discoveryID // FEITO
-#4 ° Lista com nome dos templates. // FEITO COM $1 --- Realiza utilizando: sed 
-#5 ° Fazer template.get // FEITO
+#2 ° Preciso do DiscoveryID para get da trigger
+#3 ° Preciso do Hostids para get do discoveryID
+#4 ° Lista com nome dos templates. // $1 --- Realiza utilizando: sed 
+#5 ° Fazer template.get 
 
 
 zabbix_user="Admin"
@@ -43,9 +43,9 @@ discoveryid=$(curl -s -k -H  'Content-Type: application/json-rpc' -d "
     },
     \"auth\": \"${zabbix_auth_token}\",
     \"id\": 1
-}" ${zabbix_api}| jq .result[].itemid | sed s'/"//g' > teste.dennis)
+}" ${zabbix_api}| jq .result[].itemid | sed s'/"//g' > teste)
 
-for i in $(cat teste.dennis)
+for i in $(cat teste)
 do 
     value=$(echo $i);
     triggerid=$(curl -s -k -H  'Content-Type: application/json-rpc' -d "
@@ -62,13 +62,13 @@ do
 
     for a in $(cat valor.trigger);
     do
-         trigg=$(echo $a);
+         trigguer_value=$(echo $a);
          tagupdate=$(curl -s -k -H  'Content-Type: application/json-rpc' -d "
         {
             \"jsonrpc\": \"2.0\",
             \"method\": \"triggerprototype.update\",
             \"params\": {
-                \"triggerid\": \"${trigg}\",
+                \"triggerid\": \"${trigger_value}\",
                 \"tags\": [
                     {
                         \"tag\": \"integ_itsm_grp\",
