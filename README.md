@@ -20,6 +20,7 @@ This repository contais:
     - It is necessary in all scripts to configure user and password
     - It is necessary in all scripts to configure parameters of your choice // as per your need
     - It is need understand Shell and Linux in order not to harm your environment
+    - Extremely necessary to read the code comments to know which variables to change
     
 
 
