@@ -1,8 +1,8 @@
-<h1 align="center"> Shell Scripting</h1>
+<h1 align="center"> Desafios em Shell Script</h1>
 
 <div align="center">
 
-![text-x-script-icon](https://user-images.githubusercontent.com/81188924/223874827-af90f5e1-bed3-4868-9c82-33f1e82aacf8.png)
+![text-x-script-icon](https://binbash.club/bin_bash.gif)
 
 </div>
 
@@ -27,6 +27,6 @@ This repository contais:
 
 <div align="center">
 
-![518713](https://user-images.githubusercontent.com/81188924/223877124-ac06af79-9e99-4bea-8ed4-7759b7340f13.png)
+![518713](https://images.pling.com/img/00/00/55/86/05/1442245/24647f211b4887364973b9958bed65676de92a8d7b2cf31af3e3297a9d74b8ab037e.gif)
     
 </div>
