@@ -2,7 +2,7 @@
 
 
 zabbix_user="Admin"
-zabbix_pass="Julia#2021"
+zabbix_pass="pass"
 zabbix_api="http://192.168.32.128/zabbix/api_jsonrpc.php"
 primeiro=$1
 
