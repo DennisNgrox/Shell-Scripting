@@ -1,7 +1,7 @@
 #!/bin/bash
 
-zabbix_user="API_ZABBIX_PROD"
-zabbix_pass="Ageri@2022"
+zabbix_user="api_zabbix"
+zabbix_pass="<pass>"
 zabbix_api="http://zabbix-web/api_jsonrpc.php"
 url=$(echo "$1" | sed s'/http:\/\///g')
 host=$(echo "$1" | sed s'/\./_/g' | sed s'/:/_/g' | sed s'/\//_/g' | sed s'/-/_/g')
